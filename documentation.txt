@@ -1,0 +1,102 @@
+
+## Overview
+This project consists of Order Service and Store Service.
+- Order Service handles order creation and total price calculation.
+- Store Service handles product management and catalog operations.
+
+---
+
+## Order Service
+
+### Features
+- Create order
+- Calculate total price
+
+### API Endpoints
+
+#### POST /orders
+Create a new order
+
+Request:
+{
+  "userId": "123",
+  "products": [
+    {
+      "productId": "p1",
+      "quantity": 2,
+      "price": 100
+    }
+  ]
+}
+
+Response:
+{
+  "totalPrice": 200,
+  "status": "pending"
+}
+
+### Project Structure
+- controllers → handles requests  
+- services → business logic  
+- repositories → database operations  
+- models → schema  
+
+### Setup
+npm install  
+npm start  
+
+### Environment Variables
+MONGO_URI=mongodb://localhost:27017/orderdb
+PORT=3000  
+
+---
+
+## Store Service
+
+### Features
+- Add product
+- View products
+- Manage product details
+
+### API Endpoints
+
+#### GET /products
+Get all products
+
+#### POST /products
+Add a new product
+
+Request:
+{
+  "name": "Trimmer",
+  "price": 350,
+  "stock": 50
+}
+
+Response:
+{
+  "id": "p1",
+  "name": "Trimmer",
+  "price": 350,
+  "stock": 50
+}
+
+### Project Structure
+- controllers → handles requests  
+- services → business logic  
+- repositories → database operations  
+- models → schema  
+
+### Setup
+npm install  
+npm start  
+
+### Environment Variables
+MONGO_URI=mongodb://localhost:27017/storedb
+PORT=3001  
+
+---
+
+## Docker
+
+docker-compose up --build

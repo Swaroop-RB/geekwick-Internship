@@ -1,0 +1,59 @@
+# User Stories - Meesho Shopping App
+
+As a user :
+I want to sign up using my phone number and OTP  
+So that I can create an account and start shopping on Meesho  
+
+I want to log in quickly using OTP  
+So that I can access my Meesho account
+ 
+I want to browse different categories and products  
+So that I can find items I want to buy  
+
+I want to search for products using keywords  
+So that I can quickly find specific items    
+ 
+I want to add products to my cart  
+So that I can purchase multiple items together  
+ 
+I want to add or update my delivery address  
+So that my orders are delivered to the correct location  
+ 
+I want to pay using UPI, card, or wallet  
+So that I can complete my purchase securely and easily  
+
+I want to track my order status  
+So that I know when my product will be delivered   
+  
+I want to view my past orders
+So that I can keep track of my purchases  
+  
+
+
+ 
+As an admin  
+I want to log in securely to the admin panel  
+So that I can manage the Meesho platform  
+
+I want to view all listed products  
+So that I can monitor what is being sold  
+
+I want to approve or reject products  
+So that only valid products are available on Meesho  
+
+I want to view all orders  
+So that I can track platform activity  
+
+I want to update order status  
+So that users get accurate delivery updates  
+
+I want to handle cancellations and returns  
+So that issues are resolved properly  
+
+I want to view all transactions  
+So that I can monitor payments  
+
+I want to handle failed transactions  
+So that payment issues are resolved  
+   
+  

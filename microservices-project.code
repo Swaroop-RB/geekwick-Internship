@@ -1,0 +1,17 @@
+# User Stories
+
+## User Service
+- As a user, I want to register using /users so that I can create an account.
+- As a user, I want to login using /login so that I can access the system.
+
+## Student Service
+- As a user, I want to add student using POST /students so that records are created.
+- As a user, I want to view students using GET /students.
+
+## Course Service
+- As a user, I want to create courses using POST /courses.
+- As a user, I want to view courses using GET /courses.
+
+## College Service
+- As a user, I want to add colleges using POST /colleges.
+- As a user, I want to view colleges using GET /colleges.
