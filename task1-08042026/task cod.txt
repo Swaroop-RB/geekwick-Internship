@@ -1,0 +1,36 @@
+db.employeesdb.insertMany([
+{name:"arjun" ,age:22 ,role:"developer"},
+{name:"sharath" ,age:21 ,role:"tester"},
+{name:"shamanth" ,age:22 ,role:"manager"},
+])
+
+db.departmentsdb.insertMany([
+{deptName:"IT" ,location:"Bangalore"},
+{deptName:"HR" ,location:"Mangalore"},
+{deptName:"Finance" ,location:"Mylore"}
+])
+
+db.productsdb.insertMany([
+{name: "smartrphone" ,price : 15000 ,category:"electronics" ,stock:10},
+{name: "chair" ,price : 3000 ,category:"furniture" ,stock:10},
+{name: "vase" ,price : 1000 ,category:"homeDecor" ,stock:20},
+])
+
+
+db.createCollection("employeesdb")
+
+db.createCollection("departmentsdb")
+
+db.createCollection("productsdb")
+
+db.employeesdb.insertOne({
+  name: "suraj",
+  age: 22,
+  role: "Support",
+  email: "suraj@geekwick.in",
+  phone: "9988776655"
+})
+
+db.employeesdb.find()
+db.departmentsdb.find
+db.productsdb.find()
