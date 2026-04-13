@@ -1,0 +1,77 @@
+
+BASIC TASK-TOPIC 1
+
+1.Insert one student
+db.students.insertOne({
+  name: "Arjun",
+  age: 21,
+  course: "Computer Science"
+})
+2. Insert one employee
+db.employees.insertOne({
+  name: "Suraj",
+  department: "IT",
+  salary: 30000
+})
+3. Insert one book
+db.books.insertOne({
+  title: "Atomic Habits",
+  author: "James Clear",
+  price: 500
+})
+4. Insert one movie
+db.movies.insertOne({
+  name: "Inception",
+  rating: 8.8,
+  genre: "Sci-Fi"
+})
+5. Insert one department
+db.departments.insertOne({
+  name: "IT",
+  location: "mysore"
+})
+
+
+
+INTERMEDIATE TASK-TOPIC 1
+
+1. Insert 5 students
+db.students.insertMany([
+  { name: "Akash", age: 20, course: "IS" },
+  { name: "Arun", age: 22, course: "CS" },
+  { name: "Kiran", age: 21, course: "ECE" },
+  { name: "Pooja", age: 23, course: "ME" },
+  { name: "Rahul", age: 22, course: "Civil" }
+])
+2. Insert 5 employees
+db.employees.insertMany([
+  { name: "Ajay", department: "IT", salary: 40000 },
+  { name: "Veena", department: "HR", salary: 35000 },
+  { name: "Karthik", department: "Finance", salary: 45000 },
+  { name: "Divya", department: "Marketing", salary: 30000 },
+  { name: "Vikas", department: "Sales", salary: 28000 }
+])
+3. Insert 5 products
+db.products.insertMany([
+  { name: "Laptop", category: "Electronics", stock: 10 },
+  { name: "Phone", category: "Electronics", stock: 25 },
+  { name: "Chair", category: "Furniture", stock: 15 },
+  { name: "Table", category: "Furniture", stock: 8 },
+  { name: "Headphones", category: "Accessories", stock: 20 }
+])
+4. Insert 5 tasks
+db.tasks.insertMany([
+  { title: "Task1", priority: "High", status: "Pending" },
+  { title: "Task2", priority: "Medium", status: "In Progress" },
+  { title: "Task3", priority: "Low", status: "Completed" },
+  { title: "Task4", priority: "High", status: "Pending" },
+  { title: "Task5", priority: "Medium", status: "Completed" }
+])
+5. Insert 5 interns
+db.interns.insertMany([
+  { name: "Arun", age: 21, department: "IT", isActive: true },
+  { name: "Varun", age: 22, department: "HR", isActive: false },
+  { name: "Rohit", age: 23, department: "Finance", isActive: true },
+  { name: "Rahul", age: 20, department: "Marketing", isActive: true },
+  { name: "Sanjay", age: 22, department: "Sales", isActive: false }
+])

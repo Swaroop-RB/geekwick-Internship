@@ -1,0 +1,92 @@
+Topic 1: Aggregation Basics
+
+Basic Tasks
+// 1. Count interns
+db.interns.aggregate([
+  { $count: "totalInterns" }
+])
+
+// 2. Group interns by department
+db.interns.aggregate([
+  { $group: { _id: "$department", count: { $sum: 1 } } }
+])
+
+// 3. Average age
+db.interns.aggregate([
+  { $group: { _id: null, avgAge: { $avg: "$age" } } }
+])
+
+// 4. Employees per department
+db.employees.aggregate([
+  { $group: { _id: "$department", total: { $sum: 1 } } }
+])
+
+// 5. Tasks per status
+db.tasks.aggregate([
+  { $group: { _id: "$status", total: { $sum: 1 } } }
+])
+
+
+Intermediate Tasks
+// 1. Avg salary by department
+db.employees.aggregate([
+  { $group: { _id: "$department", avgSalary: { $avg: "$salary" } } }
+])
+
+// 2. Total stock per category
+db.products.aggregate([
+  { $group: { _id: "$category", totalStock: { $sum: "$stock" } } }
+])
+
+// 3. Active interns per department
+db.interns.aggregate([
+  { $match: { isActive: true } },
+  { $group: { _id: "$department", count: { $sum: 1 } } }
+])
+
+// 4. Highest salary per department
+db.employees.aggregate([
+  { $group: { _id: "$department", maxSalary: { $max: "$salary" } } }
+])
+
+// 5. Projects per status
+db.projects.aggregate([
+  { $group: { _id: "$status", total: { $sum: 1 } } }
+])
+
+
+Advanced Tasks
+// 1. Avg age of active interns by department
+db.interns.aggregate([
+  { $match: { isActive: true } },
+  { $group: { _id: "$department", avgAge: { $avg: "$age" } } }
+])
+
+// 2. Non-deleted tasks by status
+db.tasks.aggregate([
+  { $match: { isDeleted: false } },
+  { $group: { _id: "$status", count: { $sum: 1 } } }
+])
+
+// 3. Total budget by team
+db.projects.aggregate([
+  { $group: { _id: "$team", totalBudget: { $sum: "$budget" } } }
+])
+
+// 4. Min, max, avg salary
+db.employees.aggregate([
+  {
+    $group: {
+      _id: "$department",
+      minSalary: { $min: "$salary" },
+      maxSalary: { $max: "$salary" },
+      avgSalary: { $avg: "$salary" }
+    }
+  }
+])
+
+// 5. Department + employee count sorted
+db.employees.aggregate([
+  { $group: { _id: "$department", total: { $sum: 1 } } },
+  { $sort: { total: -1 } }
+])

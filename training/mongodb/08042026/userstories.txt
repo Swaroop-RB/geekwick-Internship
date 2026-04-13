@@ -1,0 +1,39 @@
+# User Stories
+
+## Catalog Service (Store Service)
+
+- As a user, I want to view all available products so that I can browse certain materials.
+
+- As a user, I want to search for products using keywords so that I can quickly find required items.
+
+- As a user, I want to filter products by category, price, and availability so that I can choose suitable materials.
+
+- As a user, I want to view detailed product information so that I can understand specifications before purchasing.
+
+- As a user, I want to check product stock availability so that I know whether the product can be ordered.
+
+- As an admin, I want to add new products so that new materials can be listed in the catalog.
+
+- As an admin, I want to update product details so that information stays accurate.
+
+- As an admin, I want to delete (soft delete) products so that unavailable items are hidden from users.
+
+## Order Service
+
+- As a user, I want to place an order so that I can purchase selected products.
+
+- As a user, I want to view my order history so that I can track past purchases.
+
+- As a user, I want to view order details so that I can verify items and pricing.
+
+- As a user, I want to track my order status so that I know the delivery progress.
+
+- As a user, I want to cancel an order so that I can stop the purchase if needed.
+
+- As a user, I want to update my delivery address before shipment so that I receive the order at the correct location.
+
+- As a user, I want to view total cost including taxes and delivery charges so that I know the final price.
+
+- As an admin, I want to update order status so that I can manage order processing (e.g., pending, shipped, delivered).
+
+

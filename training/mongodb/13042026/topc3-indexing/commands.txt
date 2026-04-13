@@ -1,0 +1,23 @@
+Topic 3: Indexing
+// Basic
+db.employees.createIndex({ email: 1 })
+db.employees.getIndexes()
+db.interns.createIndex({ department: 1 })
+db.tasks.createIndex({ status: 1 })
+db.products.getIndexes()
+
+// Intermediate
+db.employees.createIndex({ email: 1 }, { unique: true })
+db.employees.createIndex({ department: 1, salary: 1 })
+db.tasks.createIndex({ projectId: 1 })
+db.tasks.createIndex({ isDeleted: 1 })
+
+// Advanced 
+/
+ 2. Compound index
+db.tasks.createIndex({ status: 1, priority: 1 })
+
+ 3. Employees indexing strategy
+db.employees.createIndex({ email: 1 })
+db.employees.createIndex({ department: 1 })
+db.employees.createIndex({ joinedDate: 1 })

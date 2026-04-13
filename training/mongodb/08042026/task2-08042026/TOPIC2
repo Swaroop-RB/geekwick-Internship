@@ -1,0 +1,33 @@
+BASIC TASK-TOPIC2
+
+1. Show all students
+db.students.find()
+
+2. Show all employees
+db.employees.find()
+
+3. Show all products
+db.products.find()
+
+4. Find one student by name
+db.students.findOne({ name: "Arjun" })
+
+5. Find one employee by department
+db.employees.findOne({ department: "HR" })
+
+INTERMEDIATE TASK-TOPIC2
+
+1.Show students with course = "MERN"
+db.students.find({ course: "MERN" })
+
+2. Find all employees in "HR"
+db.employees.find({ department: "HR" })
+
+3. Find all products in "Electronics"
+db.products.find({ category: "Electronics" })
+
+4. Find one task where status = "Pending"
+db.tasks.findOne({ status: "Pending" })
+
+5. Find all interns where isActive = true
+db.interns.find({ isActive: true })

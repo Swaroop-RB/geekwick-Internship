@@ -1,0 +1,130 @@
+Topic 4: $lookup (Joins)
+
+Basic
+// 1. Departments
+db.departments.insertMany([
+  { _id: 1, name: "Engineering" },
+  { _id: 2, name: "HR" },
+  { _id: 3, name: "Marketing" }
+])
+
+// 2. Interns
+db.interns.insertMany([
+  { name: "A", departmentId: 1 },
+  { name: "B", departmentId: 2 }
+])
+
+// 3. Lookup
+db.interns.aggregate([
+  {
+    $lookup: {
+      from: "departments",
+      localField: "departmentId",
+      foreignField: "_id",
+      as: "dept"
+    }
+  }
+])
+
+// 4. Show name + dept
+db.interns.aggregate([
+  {
+    $lookup: {
+      from: "departments",
+      localField: "departmentId",
+      foreignField: "_id",
+      as: "dept"
+    }
+  },
+  { $unwind: "$dept" },
+  { $project: { name: 1, "dept.name": 1 } }
+])
+
+// 5. Tasks + employees
+db.tasks.aggregate([
+  {
+    $lookup: {
+      from: "employees",
+      localField: "assignedTo",
+      foreignField: "_id",
+      as: "emp"
+    }
+  }
+])
+
+
+Intermediate
+// Intern + dept name
+db.interns.aggregate([
+  {
+    $lookup: {
+      from: "departments",
+      localField: "departmentId",
+      foreignField: "_id",
+      as: "dept"
+    }
+  },
+  { $unwind: "$dept" },
+  { $project: { name: 1, dept: "$dept.name" } }
+])
+
+// Tasks + employee name
+db.tasks.aggregate([
+  {
+    $lookup: {
+      from: "employees",
+      localField: "assignedTo",
+      foreignField: "_id",
+      as: "emp"
+    }
+  },
+  { $unwind: "$emp" },
+  { $project: { title: 1, empName: "$emp.name" } }
+])
+
+Advanced
+// Intern + dept + tasks
+db.interns.aggregate([
+  {
+    $lookup: {
+      from: "departments",
+      localField: "departmentId",
+      foreignField: "_id",
+      as: "dept"
+    }
+  },
+  { $unwind: "$dept" },
+  {
+    $lookup: {
+      from: "tasks",
+      localField: "_id",
+      foreignField: "assignedTo",
+      as: "tasks"
+    }
+  },
+  {
+    $project: {
+      name: 1,
+      department: "$dept.name",
+      tasks: 1
+    }
+  }
+])
+
+// Dept-wise interns count
+db.departments.aggregate([
+  {
+    $lookup: {
+      from: "interns",
+      localField: "_id",
+      foreignField: "departmentId",
+      as: "interns"
+    }
+  },
+  {
+    $project: {
+      name: 1,
+      totalInterns: { $size: "$interns" }
+    }
+  }
+])

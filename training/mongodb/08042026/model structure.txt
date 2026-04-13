@@ -1,0 +1,13 @@
+Catalog Model:
+Product:
+- name
+- price
+- category
+- stock
+
+Order Model:
+Order:
+- userId
+- products
+- totalPrice
+- status
