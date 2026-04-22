@@ -1,0 +1,29 @@
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  color: #0070f3;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.image {
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  color: #333;
+}
+
+.list li {
+  margin: 5px 0;
+}
+
+.button {
+  margin-top: 15px;
+}

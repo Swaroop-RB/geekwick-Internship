@@ -21,7 +21,7 @@ export default function Courses() {
     <div>
       <h2>Courses</h2>
 
-      {/* 🔍 FILTER */}
+     
       <select onChange={(e) => setFilter(e.target.value)}>
         <option>All</option>
         <option>Beginner</option>
@@ -29,7 +29,7 @@ export default function Courses() {
         <option>Advanced</option>
       </select>
 
-      {/* COURSES */}
+      
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         {filtered.map(c => (
           <CourseCard key={c.id} course={c} />

@@ -10,7 +10,6 @@ export default function Register() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  // Handle input change
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -18,7 +17,6 @@ export default function Register() {
     });
   };
 
-  // Handle submit
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
@@ -29,7 +27,7 @@ export default function Register() {
       <h2>Register</h2>
 
       <form onSubmit={handleSubmit}>
-        {/* Name */}
+
         <input
           type="text"
           name="name"
@@ -39,7 +37,6 @@ export default function Register() {
         />
         <br /><br />
 
-        {/* Email */}
         <input
           type="email"
           name="email"
@@ -49,7 +46,6 @@ export default function Register() {
         />
         <br /><br />
 
-        {/* Course */}
         <input
           type="text"
           name="course"
@@ -65,7 +61,6 @@ export default function Register() {
         </button>
       </form>
 
-      {/* Show submitted data */}
       {submitted && (
         <div style={{ marginTop: "20px" }}>
           <h3>Submitted Data</h3>
